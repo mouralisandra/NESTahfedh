@@ -1,0 +1,50 @@
+:root {
+    --primary-color: #f3c96f00;
+    --secondary-color: #f7f7e22c;
+    --background-color: #f5f5f500;
+    --text-color: #212121;
+    }
+  /* Set up the beige animated background */
+  body {
+    background-color: #ffa8eb00;
+  }
+
+  
+  /* Apply modern styles to the sidebar */
+  .sidebar {
+    width: 250px;
+    float: left;
+    background-color: var(--primary-color);
+    color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    margin-right: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.039);
+  }
+  
+  /* Add hover animation to category elements */
+  .category {
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+  }
+  
+  .category:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Customize the category list style */
+  .category-list {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-list:hover {
+    background-color: var(--accent-color);
+    color: white;
+  }
+  

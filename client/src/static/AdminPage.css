@@ -1,0 +1,38 @@
+.admin-block {
+    margin-top: 10px;
+}
+
+.container {
+    min-width: 95rem;
+}
+
+.users-table-header, .orders-table-header, .products-table-header {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 40px 0 20px 0;
+}
+
+
+.admin-user-controllers i, .admin-order-controllers i, .admin-product-controllers i{
+   cursor: pointer;
+}
+
+.admin-user-controllers i:hover, .admin-order-controllers i:hover, .admin-product-controllers i:hover{
+    transform: scale(1.1);
+}
+
+.edit-item i:hover {
+    color: rgb(0, 0, 0);
+}
+
+.delete-item i:hover, .cancel-edit i:hover {
+    color: #dc3545;
+}
+
+.confirm-edit i:hover {
+    color: #198754;
+}
+
+.admin-table-no-data {
+    font-size: 30px;
+}

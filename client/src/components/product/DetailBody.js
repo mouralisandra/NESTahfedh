@@ -1,0 +1,120 @@
+import React, {useContext, useState} from 'react';
+import {Button, Container, Image} from "react-bootstrap";
+import {Link} from "react-router-dom";
+import Comment from "../comment/Comment";
+import {addToCart} from "../../http/cartHttp";
+import {Context} from "../../index";
+import AddToCartToast from "./AddToCartToast";
+
+const DetailBody = ({currentProduct, openDeleteModalHandler}) => {
+
+    const {user, cart} = useContext(Context)
+
+    const [show, setShow] = useState(false)
+
+    const addToCartShowHandler = async () => {
+        await setShow(true)
+        setTimeout(() => setShow(false), 1000)
+    }
+
+    const addToCartHandler = async () => {
+        await addToCart(currentProduct.id, currentProduct.price, user.user.userId)
+        await cart.setCartTotalProductsCount(-1)
+        await addToCartShowHandler()
+    }
+
+
+    return (
+        <Container className="detail__body">
+            <div className="detail__row">
+                <div className="detail__column">
+                    <div className="detail__item">
+                        <div className="detail__img">
+                            <Image
+                                width={463}
+                                height={347}
+                                variant="dark"
+                                src={process.env.REACT_APP_GET_IMG + '/' + currentProduct.img}
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="detail__column">
+                    <div className="detail__item__title">
+                        <div className="detail__title">
+                            {currentProduct.title}
+                        </div>
+                        <div className="detail__cart__btn">
+                            <Button className="detail__add__to__cart" onClick={addToCartHandler}
+                                    variant="outline-dark" size="lg">Add to cart</Button>
+                        </div>
+                    </div>
+                </div>
+                <AddToCartToast show={show} />
+                <div className="detail__column">
+                    <div className="detail__information">
+                        <div className="detail__item">
+                            <div className="characteristic__title">
+                                Characteristic
+                            </div>
+                            <div className="characteristic">
+                                <div className="characteristic__row">
+                                    <div className="characteristic__column">
+                                        <div className="category__label">
+                                            category
+                                        </div>
+                                        <div className="category__value">
+                                            {currentProduct?.category?.value}
+                                        </div>
+                                    </div>
+                                    <div className="characteristic__column">
+                                        <div className="price__label">
+                                            price
+                                        </div>
+                                        <div className="price__value">
+                                            {currentProduct.price}$
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="block__description">
+                <div className="description__title">
+                    Description
+                </div>
+                <div className="description__title">
+                    {currentProduct.description}
+                </div>
+                {
+                    currentProduct.userId === user.user.userId &&
+                    <div className="card-button-manage" sty>
+
+                        <Link
+                            to={`/product-update/${currentProduct.id}/`}
+                            className='btn btn-dark'
+                            key={currentProduct.id}
+                            state={currentProduct}
+                            style={{marginRight: '50px'}}
+                        >
+                            Update
+                        </Link>
+
+                        <Button
+                            onClick={openDeleteModalHandler}
+                            className='btn-dark'
+                            style={{marginRight: '10px'}}
+                        >
+                            Delete
+                        </Button>
+                    </div>
+                }
+            </div>
+            <Comment productId={currentProduct.id}/>
+        </Container>
+    );
+};
+
+export default DetailBody;

@@ -1,0 +1,32 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .create-button {
+    background-color: #ffd23190;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .create-button:hover {
+    background-color: #f5e55a;
+  }
+  
+  .wrong___create__data {
+    color: rgba(255, 0, 72, 0.847);
+    margin-bottom: 10px;
+  }
+  
+  .create__category__error {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  /* Customize other form styles as desired */
+  
