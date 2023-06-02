@@ -50,7 +50,13 @@ const CartPage = observer(() => {
     }
 
     if (!cart?.cartTotalProductsCount) {
-        return <div className="cart-data-info">Your cart is empty</div>
+        return <> 
+         <ThemeProvider theme={light}>
+            
+        <div className="cart-data-info" style={{marginTop:'-15%',marginBottom:'5%'}}>Your cart is empty</div>
+        <Showcase />
+      </ThemeProvider>
+       </>
     }
 
     return (
