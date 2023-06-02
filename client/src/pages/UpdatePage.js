@@ -49,7 +49,12 @@ const UpdatePage = observer(() => {
     }
 
     return (
-        
+        <section>
+        <div class=" d-flex align-items-center">
+        <div class="text-align-left align-self-center" style={{marginLeft:'40%'}}>         
+        <h2 style={{ fontFamily:'serif', fontSize:'60px',marginTop:'3%'}}>Update Product: </h2>
+        </div>
+    </div>
         <Card className="updateProductCard" style={{width: '30rem', left: '35%', marginTop: 150}}>
            <UpdateProductForm
                validated={validated}
@@ -58,6 +63,7 @@ const UpdatePage = observer(() => {
                product={product}
            />
         </Card>
+        </section>
     );
 });
 

@@ -9,9 +9,12 @@ import {recalcCartFinalPrice} from "../utils/cart/RecalcCartFinalPrice";
 import {countTotalProducts} from "../utils/product/CountTotalProducts";
 import {Link} from "react-router-dom";
 import {observer} from "mobx-react-lite";
-import Banner from '../components/Banner';
 import ConfettiComponent from '../components/Confetti';
-import Footer from '../components/Footer';
+import Banner2 from '../components/Banner2';
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "../components/styles/GlobalStyles";
+import { light } from "../components/styles/Themes";
+import Showcase from '../components/sections/Showcase';
 
 const CartPage = observer(() => {
 
@@ -51,39 +54,36 @@ const CartPage = observer(() => {
     }
 
     return (
-     
-             <div style={{marginTop:'2%',marginBottom:'5%',alignItems:'center',marginleft:'25%'}}>
-           
-            <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
-            <ConfettiComponent />
-       <div class="container" style={{marginLeft:'5%'}}>
-              
-               <div class=" d-flex align-items-center">
-                   <div class="text-align-left align-self-center" style={{marginLeft:'40%'}}>         
-                   <h2 style={{ fontFamily:'serif', fontSize:'60px',marginBottom:'3%',marginTop:'3%'}}>Your Cart:</h2>
-                   </div>
-               </div>
-           </div>
-        </div>
-            <Container style={{marginLeft:'7%'}}>
+
+             <div style={{marginTop:'2%',marginBottom:'15%',alignItems:'center',marginleft:'25%'}}>
+           <GlobalStyles />
+           <Banner2/>
+              <ConfettiComponent />
+            <Container style={{marginLeft:'7%',marginBottom:'2%'}}>
                 <CartProductsRowDesc/>
-                <Row md={1}>
+                <Row md={1} style={{marginBottom:'2%'}}>
                     {cart.cartProducts.map((product) => (
                         <CartProduct
                             key={product.id}
                             product={product}
                         />
+                        
+                        
                     ))}
-                </Row>
+
+             <Row md={2}>
                 <div className="final-price-content">In total: <br/><strong>{cart.finalPrice}$</strong></div>
                 <Link
                     to="/order/"
                     className="btn btn-outline-dark go-to-order-btn"
                 >
                     Make an order
-                </Link>
+                </Link>  </Row> </Row>
             </Container>
-            <Footer/>
+            <ThemeProvider theme={light}>
+        <Showcase />
+      </ThemeProvider>
+           
         </div>
     );
 });

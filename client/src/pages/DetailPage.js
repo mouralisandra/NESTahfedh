@@ -10,7 +10,8 @@ import DeleteProductModal from "../components/product/DeleteProductModal";
 import DetailBody from "../components/product/DetailBody";
 import Banner from '../components/Banner';
 import Banner2 from '../components/Banner copy';
-
+import {Card} from "react-bootstrap";
+import ConfettiComponent from '../components/Confetti';
 
 const DetailPage = observer(() => {
 
@@ -49,33 +50,24 @@ const DetailPage = observer(() => {
     }
 
     return (
-        <> <div style={{marginTop:'2%',marginBottom:'5%',alignItems:'center',marginleft:'25%'}}>
-       
-        <div id="template-mo-zay-hero-carousel" >
-   
-   <div class="container" style={{marginLeft:'5%'}}>
-          
-           <div class=" d-flex align-items-center">
-               <div class="text-align-left align-self-center" style={{marginLeft:'40%'}}>         
-               <h2 style={{ fontFamily:'serif', fontSize:'60px',marginBottom:'3%',marginTop:'3%'}}>Product Details: </h2>
-               </div>
-           </div>
-       </div>
-    </div>
-   
-            <DeleteProductModal
+        <> <div style={{marginTop:'2%',marginBottom:'5%',alignItems:'center'}}>
+       <ConfettiComponent/>
+       <Banner2/>
+       <DeleteProductModal
                 show={showDeleteProductModal}
                 closeProductModalHandler={closeDeleteProductModalHandler}
                 productId={productId}
             />
-        <div className="detail__block detail" style={{marginLeft:'25%'}}>
+        <div className="detail__block detail" style={{}}>
+        <Card className="create-product-card" style={{ width: '80rem' , alignItems:'center',marginLeft:'-22%',height:'70%'}}>
             <DetailBody
                 currentProduct={currentProduct}
                 openDeleteModalHandler={openDeleteProductModalHandler}
             />
+        </Card>
         </div>
-        <Banner2/>
         </div>
+        
         </>
     );
 });

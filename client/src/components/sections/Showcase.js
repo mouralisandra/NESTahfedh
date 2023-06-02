@@ -50,7 +50,7 @@ const move = keyframes`
 const Row = styled.div`
   white-space: nowrap;
   box-sizing: content-box;
-  margin: 2rem 0;
+  margin: 0rem 0;
   display: flex;
 
   animation: ${move} linear infinite ${(props) => props.direction};

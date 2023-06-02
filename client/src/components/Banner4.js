@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import img1 from "../assets/Nfts/home5.png";
-import img3 from "../assets/Nfts/home7.png";
-import img4 from "../assets/Nfts/home8.png";
+import img2 from "../assets/Nfts/home2.png";
+import img7 from "../assets/Nfts/home7.png";
 import img6 from "../assets/Nfts/home10.png";
 import img9 from "../assets/Nfts/home9.png";
 import img10 from "../assets/Nfts/home10.png";
@@ -83,19 +83,19 @@ const BtnContainer = styled.div`
   }
 `;
 
-const Banner2 = () => {
+const Banner4 = () => {
   return (
     <Section>
       <ImgContainer>
         <img src={img1} />
-        <img src={img3} />
-        <img src={img10} />
-        <img src={img4} />
         <img src={img9} />
+        <img src={img10} />
+        <img src={img2} />
+        <img src={img7} />
         <img src={img6} />
       </ImgContainer>
       <ContentContainer>
-        <Title style={{color:'black'}}>Product Details:</Title>
+        <Title style={{color:'black'}}>Order Product</Title>
       </ContentContainer>
       <BtnContainer>
       </BtnContainer>
@@ -103,4 +103,4 @@ const Banner2 = () => {
   );
 };
 
-export default Banner2;
+export default Banner4;

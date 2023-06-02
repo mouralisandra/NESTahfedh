@@ -71,14 +71,9 @@ const ShopPage = observer(() => {
          <section class=" py-5">
            
        
-        <div class="row text-center pt-3">
-            <div class="col-lg-6 m-auto">
-            <div class="text-align-center align-self-center">          <div className="text-center" style={{fontFamily: 'serif', fontSize: '70px',display:'flex',float:'right' }}>
-          <Type />
-          </div>
-    </div> 
-        </div>
-    </div>
+       <div className="text-center" style={{fontFamily: 'serif', fontSize: '70px',display:'flex',float:'right' }}>
+            <Banner></Banner>
+            </div>
     </section>
     </div>
       <div className="row" style={{alignItems:'center', alignSelf:'center',marginLeft:'5%'}}>
@@ -107,7 +102,7 @@ const ShopPage = observer(() => {
             </div>
           )}
         </div>
-        <Banner></Banner>
+     
       </div>
       
  </div>

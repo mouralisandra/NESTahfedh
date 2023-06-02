@@ -14,6 +14,12 @@ import {useNavigate} from "react-router-dom";
 import {findOrderDataErrors} from "../utils/order/ValidateOrderData";
 import CreateOrderForm from "../components/order/CreateOrderForm";
 import Carousel from '../components/Carousel';
+import Banner4 from '../components/Banner4';
+import Showcase from '../components/sections/Showcase';
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "../components/styles/GlobalStyles";
+import { light } from "../components/styles/Themes";
+
 
 
 const OrderPage = observer(() => {
@@ -79,23 +85,14 @@ const OrderPage = observer(() => {
     if (!products.length) return <div className="cart-data-info">your cart is empty</div>
 
     return (
-            <div style={{marginTop:'2%',marginBottom:'5%',alignItems:'center',marginleft:'25%'}}>
-       
-       <div id="template-mo-zay-hero-carousel" >
+            <div style={{marginTop:'2%',alignItems:'center',marginleft:'25%'}}>
+       <Banner4 style={{marginBottom:'5%'}}/>
   
-  <div class="container" style={{marginLeft:'5%'}}>
-         
-          <div class=" d-flex align-items-center">
-              <div class="text-align-left align-self-center" style={{marginLeft:'40%'}}>         
-              <h2 style={{ fontFamily:'serif', fontSize:'60px',marginBottom:'3%',marginTop:'3%'}}>Order Product: </h2>
-              </div>
-          </div>
-      </div>
       <OrderProductsRowDesc/>
       {products.map(product => (
                     <OrderProduct key={product.id} cartProduct={product}/>
                 ))}
-       <div className="row">
+       <div className="row" style={{marginBottom:'5%'}}>
         <div className="col-md-4">
           <img src="/lamp.jpg" alt="Image" style={{ width: '100%', height: '100%' }} />
         </div>
@@ -110,7 +107,9 @@ const OrderPage = observer(() => {
                     />
             </Card>
 </div>
-        </div>
+<ThemeProvider theme={light}>
+        <Showcase />
+      </ThemeProvider>
         </div>
     );
 });

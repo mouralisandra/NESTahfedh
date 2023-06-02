@@ -119,7 +119,7 @@ const Carousel = () => {
     <Container>
       <Swiper
         autoplay={{
-          delay: 2000,
+          delay: 1500,
           disableOnInteraction: false,
         }}
         pagination={{

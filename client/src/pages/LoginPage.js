@@ -5,6 +5,11 @@ import {useContext} from "react";
 import {Context} from "../index";
 import {findLoginDataError} from "../utils/auth/ValidateLoginData";
 import LoginForm from "../components/auth/LoginForm";
+import Banner4 from '../components/Banner4';
+import Banner2 from '../components/Banner3';
+import Carousel from '../components/Carousel';
+import {Card} from "react-bootstrap";
+
 
 
 const LoginPage = observer(() => {
@@ -40,9 +45,27 @@ const LoginPage = observer(() => {
     }
 
     return (
-        <div className="auth-block">
-           <LoginForm loginHandler={loginHandler} errors={errors} validated={validated} />
+       
+       
+         
+           <div style={{alignItems:'center', alignSelf:'center'}}>
+             <Banner2/>
+      <div className="row">
+        <div className="col-md-6" >
+           <section style={{marginTop:'15%',marginLeft:'20%',marginBottom:'-5%', fontFamily:'serif'}}>
+            <Carousel />
+            </section>
         </div>
+        <div className="col-md-6" style={{marginTop:'%',marginLeft:'-5%'}}>
+            <h1 style={{marginTop:'10%',marginLeft:'5%',marginBottom:'-5%', fontFamily:'serif', fontSize:'50px'}}>Login To NESTahfedh</h1>
+          <Card className="create-product-card" style={{ fontFamily:'serif',fontSize:'35px',width: '40rem' , alignItems:'center',marginLeft:'-30%'}}>
+            
+          <LoginForm loginHandler={loginHandler} errors={errors} validated={validated} />
+          </Card>
+        </div>
+      </div>
+    </div>
+
     );
 });
 

@@ -66,7 +66,7 @@ const AdminPage = observer(() => {
 
         <Row className="justify-content-center">
         <Col lg={3} style={{marginTop:'-5%',width:'50%'}}>
-          <img style={{marginRight:'-5%'}} src="/tohfa.jpg"></img>
+          <img style={{marginRight:'-5%'}} src="/tohfa.png"></img>
         </Col>
 
         <Col lg={8}style={{marginRight:'-20%',marginTop:'0%'}}>
