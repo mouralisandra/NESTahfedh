@@ -12,8 +12,6 @@ export const login = async (authData) => {
         localStorage.setItem('token', res.data.token)
         return await jwtDecode(res.data.token)
     } catch (e) {
-        console.log(e)
-        return {err: e.response.data}
     }
 }
 
@@ -27,8 +25,6 @@ export const register = async (authData) => {
         })
         return {token: res.data.token, ...jwtDecode(res.data.token)}
     } catch (e) {
-        console.log(e)
-        return {err: e.response.data}
     }
 }
 
@@ -36,7 +32,6 @@ export const logout = async () => {
     try {
         localStorage.removeItem('token')
     } catch (e) {
-        console.log(e)
     }
 }
 
@@ -50,7 +45,7 @@ export const updateUser = async (userId, userUpdateData) => {
         })
         return user
     } catch (e) {
-        console.log(e)
+        
     }
 }
 
@@ -63,7 +58,7 @@ export const deleteUser = async (userId) => {
         })
         return user
     } catch (e) {
-        console.log(e)
+        
     }
 }
 
@@ -75,7 +70,7 @@ export const getUserById = async (userId) => {
         })
         return user
     } catch (e) {
-        console.log(e)
+        
     }
 }
 
@@ -89,7 +84,7 @@ export const getAllUsers = async () => {
         })
         return users.data
     } catch (e) {
-        console.log(e)
+        
     }
 }
 
@@ -103,6 +98,5 @@ export const checkAuth = async () => {
         localStorage.setItem('token', res.data.token)
         return {token: res.data.token, ...jwtDecode(res.data.token)}
     } catch (e) {
-        console.error(e)
     }
 }
