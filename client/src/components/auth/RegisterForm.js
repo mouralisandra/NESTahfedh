@@ -54,7 +54,7 @@ const RegisterForm = ({registerHandler, errors, validated}) => {
 
             <Button
                 className="submit-login-button"
-                variant="outline-success"
+                variant="outline-dark"
                 type="submit"
                 href="login"
             >
@@ -62,7 +62,7 @@ const RegisterForm = ({registerHandler, errors, validated}) => {
             </Button>
             <Button
                 className="submit-register-button"
-                variant="outline-primary"
+                variant="dark"
                 type="submit"
                 onClick={(e) => registerHandler(e, email, password, username)}
             >

@@ -41,8 +41,8 @@ const RegisterPage = () => {
        <Carousel />
        </section>
    </div>
-   <div className="col-md-6" style={{marginTop:'%',marginLeft:'-5%'}}>
-       <h1 style={{marginTop:'10%',marginLeft:'5%',marginBottom:'-5%', fontFamily:'serif', fontSize:'50px'}}>Register To NESTahfedh</h1>
+   <div className="col-md-6" style={{marginTop:'%',marginBottom:'5%',}}>
+       <h1 style={{marginTop:'10%',marginLeft:'5%', fontFamily:'serif', fontSize:'50px'}}>Register To NESTahfedh</h1>
      <Card className="create-product-card" style={{ fontFamily:'serif',fontSize:'35px',width: '40rem' , alignItems:'center',marginLeft:'-30%'}}>
        
      <RegisterForm

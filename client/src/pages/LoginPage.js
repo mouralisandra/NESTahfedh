@@ -52,7 +52,7 @@ const LoginPage = observer(() => {
              <Banner2/>
       <div className="row">
         <div className="col-md-6" >
-           <section style={{marginTop:'15%',marginLeft:'20%',marginBottom:'-5%', fontFamily:'serif'}}>
+           <section style={{marginTop:'15%',marginLeft:'20%',marginBottom:'5%', fontFamily:'serif'}}>
             <Carousel />
             </section>
         </div>

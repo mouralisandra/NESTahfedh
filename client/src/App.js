@@ -8,6 +8,7 @@ import {Context} from "./index";
 import './static/AuthPath.css'
 import {checkAuth} from "./http/userHttp";
 import {Spinner} from "react-bootstrap";
+import Footer from "./components/Footer";
 
 
 const App = observer(() => {
@@ -35,6 +36,7 @@ const App = observer(() => {
             <Browser>
                 <NavBarComponent/>
                 <AppRoutes/>
+                <Footer/>
             </Browser>
         </div>
     );

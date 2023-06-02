@@ -27,7 +27,7 @@ const PriceSorting = observer(() => {
                     <Row style={{flexDirection: 'row'}}>
 
                         <Col>
-                            <Form.Group className="mb-3" controlId="formBasicMinPrice">
+                            <Form.Group className="mb-3" controlId="formDarkMinPrice">
                                 <Form.Control
                                     value={minPrice}
                                     onChange={e => setMinPrice(e.target.value)}
@@ -51,7 +51,13 @@ const PriceSorting = observer(() => {
                         </Col>
                     </Row>
                     <div style={{textAlign: 'center'}}>
-                        <Button
+                        <Button style={{
+                borderTop: '0px',
+                borderLeft: '0px',
+                borderRight: '0px',
+                backgroundColor: 'black',
+                color: 'white',
+              }}
                             onClick={pricingHandler}
                         >
                             OK

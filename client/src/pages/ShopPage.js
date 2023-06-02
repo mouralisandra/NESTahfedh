@@ -67,10 +67,8 @@ const ShopPage = observer(() => {
   return (
     <div style={{alignItems:'center', alignSelf:'center'}} >
  <ConfettiComponent />
- <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+ <div id="template-mo-zay-hero-carousel"  class="carousel slide" data-bs-ride="carousel">
          <section class=" py-5">
-           
-       
        <div className="text-center" style={{fontFamily: 'serif', fontSize: '70px',display:'flex',float:'right' }}>
             <Banner></Banner>
             </div>
@@ -97,8 +95,9 @@ const ShopPage = observer(() => {
        <div className="row">
         <div className="col-lg-12">
           {product?.products?.length && (
-            <div className="products-body__pagination">
+            <div className="products-body__pagination" style={{marginBottom:'5%'}}>
               <PaginationBasic />
+              <br />
             </div>
           )}
         </div>

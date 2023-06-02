@@ -41,7 +41,7 @@ const LoginForm = ({loginHandler, errors, validated}) => {
             </Form.Group>
             <Button
                 className="submit-login-button"
-                variant="outline-success"
+                variant="dark"
                 type="submit"
                 onClick={(e) => loginHandler(e, email, password)}
             >
@@ -49,7 +49,7 @@ const LoginForm = ({loginHandler, errors, validated}) => {
             </Button>
             <Button
                 className="submit-register-button"
-                variant="outline-primary"
+                variant="outline-dark"
                 href="register"
             >
                 I'm not registered

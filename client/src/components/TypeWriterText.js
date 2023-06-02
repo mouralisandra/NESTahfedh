@@ -2,7 +2,7 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import styled from "styled-components";
 import Button from "./Button";
-
+import { Link } from "react-router-dom";
 const Title = styled.h2`
   font-size: ${(props) => props.theme.fontxxl};
   text-transformation: capitalize;
@@ -82,7 +82,7 @@ const TypeWriterText = () => {
   return (
     <>
       <Title style={{fontSize:'50px'}}>
-        Esta7fedh ala flousek
+NESTahfedh ala floussiSh
         <Typewriter
           options={{
             autoStart: true,
@@ -93,10 +93,10 @@ const TypeWriterText = () => {
               .typeString("<span class='text-1'>Better than Frippe de luxe</span>")
               .pauseFor(2000)
               .deleteAll()
-              .typeString("<span class='text-2'>The best thrift shop.</span>")
+              .typeString("<span class='text-2'>Estahfedh ala floussek.</span>")
               .pauseFor(2000)
               .deleteAll()
-              .typeString("<span class='text-3'Better than Tayara</span>")
+              .typeString("<span class='text-3'>Better than Tayara</span>")
               .pauseFor(2000)
               .deleteAll()
               .start();
@@ -105,7 +105,9 @@ const TypeWriterText = () => {
       </Title>
       <SubTitle>The new Techwall Generation</SubTitle>
       <ButtonContainer>
-        <Button text="Explore" link="#about" />
+      <Link to={"/shop"}>
+        <Button text="Shop Now !"  />
+      </Link>
       </ButtonContainer>
     </>
   );

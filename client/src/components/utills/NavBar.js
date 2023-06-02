@@ -37,18 +37,26 @@ const NavBarComponent = observer(() => {
         <div style={{backgroundColor:'transparent'}}>
             <Navbar style={{height: 120, fontSize: 27,fontFamily:'serif',marginLeft:'8%',marginRight:'8%'}} collapseOnSelect expand="lg" bg="white" variant="white">
                 <Navbar.Brand style={{marginLeft: 10}} href="/"><img style={{width:'10Rem'}} src="/logo.png"></img></Navbar.Brand>
+              
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
-                <Navbar.Collapse style={{marginRight: 10}} id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        {user.user.role === 'admin' && <Nav.Link href="/admin/">Admin</Nav.Link>}
-                        <NavDropdown title="Actions" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="/create/">Create Product</NavDropdown.Item>
-                        </NavDropdown>
-                        <Nav.Link
+                <Nav.Link 
                             href="/shop"
                         >
                             Shop
                         </Nav.Link>
+                <Navbar.Collapse style={{marginRight: 10}} id="responsive-navbar-nav">
+                    <Nav className="me-auto" >
+                        {user.user.role === 'admin' && <Nav.Link href="/admin/">Admin</Nav.Link>}
+                        <NavDropdown title="Actions" id="collasible-nav-dropdown">
+                            <NavDropdown.Item style={{
+                borderTop: '0px',
+                borderLeft: '0px',
+                borderRight: '0px',
+                backgroundColor: 'white',
+                color: 'black',
+              }} href="/create/">Create Product</NavDropdown.Item>
+                        </NavDropdown>
+                       
                     </Nav>
                     <div className="search-block">
                         <Form className="d-flex">

@@ -24,9 +24,22 @@ const CatalogSettings = observer(() => {
                     <Dropdown.Toggle variant="light" id="dropdown-basic">
                         Sorting
                     </Dropdown.Toggle>
-                    <Dropdown.Menu>
+                    <Dropdown.Menu style={{
+                borderTop: '0px',
+                borderLeft: '0px',
+                borderRight: '0px',
+                backgroundColor: 'black',
+                color: 'white',
+              }}>
                         {Object.keys(product.sortOrderVars).map((key, index) =>
                             (<Dropdown.Item
+                                style={{
+                                    borderTop: '0px',
+                                    borderLeft: '0px',
+                                    borderRight: '0px',
+                                    backgroundColor: 'black',
+                                    color: 'white',
+                                  }}
                                 onClick={() => product.setSelectedSortOrder(key)}
                                 active={product.selectedSortOrder === key}
                                 key={index.toString()}

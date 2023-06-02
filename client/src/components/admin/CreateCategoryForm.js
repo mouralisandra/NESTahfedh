@@ -32,7 +32,7 @@ const CreateCategoryForm = ({createCategory}) => {
 
                 <Button
                     className="submit-login-button"
-                    variant="outline-success"
+                    variant="outline-dark"
                     type="submit"
                     onClick={() => createCategory(category, categoryDescription)}
                 >

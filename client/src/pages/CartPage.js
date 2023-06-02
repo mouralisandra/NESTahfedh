@@ -55,7 +55,7 @@ const CartPage = observer(() => {
 
     return (
 
-             <div style={{marginTop:'2%',marginBottom:'15%',alignItems:'center',marginleft:'25%'}}>
+             <div style={{marginTop:'2%',alignItems:'center',marginleft:'25%'}}>
            <GlobalStyles />
            <Banner2/>
               <ConfettiComponent />

@@ -5,6 +5,7 @@ import Comment from "../comment/Comment";
 import {addToCart} from "../../http/cartHttp";
 import {Context} from "../../index";
 import AddToCartToast from "./AddToCartToast";
+import styled from "styled-components";
 
 const DetailBody = ({currentProduct, openDeleteModalHandler}) => {
 
@@ -22,13 +23,70 @@ const DetailBody = ({currentProduct, openDeleteModalHandler}) => {
         await cart.setCartTotalProductsCount(-1)
         await addToCartShowHandler()
     }
+    const Item = styled.div`
+    width: calc(20rem - 4vw);
+    padding: 1rem 0;
+    color: ${(props) => props.theme.body};
+    margin: 2rem 1rem;
+    position: relative;
+    z-index: 5;
+  
+    backdrop-filter: blur(4px);
+  
+    border: 2px solid ${(props) => props.theme.text};
+    border-radius: 20px;
+  
+    &:hover {
+      img {
+        transform: translateY(-2rem) scale(1.2);
+      }
+    }
+  
+    @media (max-width: 30em) {
+      width: 70vw;
+    }
+  `;
+  const Container = styled.div`
+  width: 75%;
+  margin: 2rem auto;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 64em) {
+    width: 80%;
+  }
+  @media (max-width: 48em) {
+    width: 90%;
+    justify-content: center;
+  }
+`;
+  const ImageContainer = styled.div`
+    width: 100%;
+    margin: 0 auto;
+    background-color: ${(props) => props.theme.carouselColor};
+    border: 1px solid ${(props) => props.theme.text};
+    padding: 1rem;
+  
+    border-radius: 20px;
+    cursor: pointer;
+  
+    img {
+      width: 100%;
+      height: auto;
+      transition: all 0.3s ease;
+    }
+  `;
 
     return (
-        <Container className="detail__body">
+       
+        <Container >
             <div className="detail__row">
                 <div className="detail__column">
                     <div className="detail__item">
+                        <ImageContainer>
                         <div className="detail__img">
                             <Image
                                 width={463}
@@ -37,6 +95,7 @@ const DetailBody = ({currentProduct, openDeleteModalHandler}) => {
                                 src={process.env.REACT_APP_GET_IMG + '/' + currentProduct.img}
                             />
                         </div>
+                        </ImageContainer>
                     </div>
                 </div>
                 <div className="detail__column">
@@ -111,9 +170,10 @@ const DetailBody = ({currentProduct, openDeleteModalHandler}) => {
                         </Button>
                     </div>
                 }
+                 <Comment style={{marginTop:'-40%'}} productId={currentProduct.id}/>
+       
             </div>
-            <Comment productId={currentProduct.id}/>
-        </Container>
+            </Container>
     );
 };
 
