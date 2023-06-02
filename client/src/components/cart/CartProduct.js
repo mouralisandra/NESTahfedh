@@ -3,7 +3,7 @@ import {Button, Col, Image, Row} from "react-bootstrap";
 import {changeCartProductQuantity, deleteFromCart} from "../../http/cartHttp";
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
-
+import styled from 'styled-components';
 const product = observer(({product}) => {
 
     const {cart} = useContext(Context)
@@ -34,14 +34,31 @@ const product = observer(({product}) => {
             })
         setDecreaseBtnDisabled(false)
     }
-
+    const ImageContainer = styled.div`
+    width: 100%;
+    margin: 0 auto;
+    background-color: ${(props) => props.theme.carouselColor};
+    border: 1px solid ${(props) => props.theme.text};
+    padding: 1rem;
+    
+    border-radius: 20px;
+    cursor: pointer;
+    
+    img {
+      width: 100%;
+      height: auto;
+      transition: all 0.3s ease;
+    }
+    `;
     return (
-        <div className="container">
+        <ImageContainer> 
             <Row style={{marginTop: 20}} md={7}>
                 <Col>
                     <div className="cart-img-container">
+                        <ImageContainer>
                         <Image className="cart-img" height={120} width={150}
                                src={process.env.REACT_APP_GET_IMG + '/' + product.img}></Image>
+                  </ImageContainer>
                     </div>
                 </Col>
                 <Col className="cart-title-col">
@@ -83,7 +100,7 @@ const product = observer(({product}) => {
                 <Button onClick={deleteProductFromCart} className="btn-dark delete-from-cart-btn">Delete</Button>
             </div>
             <hr/>
-        </div>
+      </ImageContainer>
     );
 });
 

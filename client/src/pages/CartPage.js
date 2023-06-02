@@ -62,6 +62,7 @@ const CartPage = observer(() => {
             <Container style={{marginLeft:'7%',marginBottom:'2%'}}>
                 <CartProductsRowDesc/>
                 <Row md={1} style={{marginBottom:'2%'}}>
+                    
                     {cart.cartProducts.map((product) => (
                         <CartProduct
                             key={product.id}

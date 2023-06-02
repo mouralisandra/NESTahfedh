@@ -7,16 +7,17 @@ import Showcase from "../components/sections/Showcase";
 import ScrollToTop from "../components/ScrollToTop";
 import { observer } from 'mobx-react-lite';
 import Banner3 from '../components/Banner3';
+import ConfettiComponent from '../components/Confetti';
 
 const HomePage = observer(() => {
     return (
         <div style={{alignItems:'center', alignSelf:'center'}} >
   
   <GlobalStyles />
+  <ConfettiComponent />
       <ThemeProvider theme={light}>
         <Home />
         <Showcase />
-        <ScrollToTop />
         <Banner3/>
       </ThemeProvider>
             

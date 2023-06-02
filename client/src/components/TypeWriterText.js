@@ -82,7 +82,7 @@ const TypeWriterText = () => {
   return (
     <>
       <Title style={{fontSize:'50px'}}>
-NESTahfedh ala floussiSh
+NESTahfedh ala floussi
         <Typewriter
           options={{
             autoStart: true,
